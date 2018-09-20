@@ -1,0 +1,21 @@
+create database test
+
+use test
+
+create table tbllop
+(
+	ma int primary key identity,
+	ten varchar(50)
+)
+create table tblsv
+(
+	ma int primary key identity,
+	ten varchar(50),
+	gt bit,
+	maLop int,
+	foreign key(maLop) references tbllop(ma)
+)
+
+insert into tbllop values ('BKC01'),('BKC02'),('BKC03'),('BKC04')
+
+insert into tblsv values ('Dung',1,1),('Huy',0,2)
